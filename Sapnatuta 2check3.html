@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayaka Restaurant | Rooftop & Lounge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lavishly+Yours&family=Allura&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+   <style>
+:root{
+  --primary:#ff7a18;
+  --secondary:#ffb347;
+  --bg:#fffaf4;
+  --card:#ffffff;
+  --text:#222;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+header{position:fixed;top:0;left:0;width:100%;background:#ffffffcc;backdrop-filter:blur(8px);z-index:1000;border-bottom:1px solid #eee}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px}
+.nav h1{font-size:26px;color:var(--primary);font-weight:600;font-family:'Playfair Display',serif;letter-spacing:1px}
+.nav ul{list-style:none;display:flex;gap:26px;font-size:14px}
+.nav ul li:hover{color:var(--primary)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(120deg,#fff1e0,#ffe0c3);display:flex;align-items:center;padding-top:80px}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:20px}
+.hero h2{font-size:58px;line-height:1.1;margin-bottom:18px;color:#111}
+.hero h2 span{color:var(--primary)}
+.hero p{font-size:17px;color:#444}
+.hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+
+.btn{padding:14px 30px;border-radius:40px;font-size:14px;font-weight:600;transition:.3s;cursor:pointer;border:none}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.secondary{background:var(--secondary);color:#000}
+.btn.outline{background:#fff;border:2px solid var(--primary);color:var(--primary)}
+.btn:hover{transform:translateY(-3px)}
+
+.hero-card{background:#fff;border-radius:24px;padding:30px;box-shadow:0 15px 40px rgba(0,0,0,.08)}
+.hero-card h4{color:var(--primary);margin-bottom:12px}
+.hero-card ul{list-style:none;font-size:14px;color:#555}
+.hero-card li{margin-bottom:8px}
+
+section{padding:90px 20px;overflow-x:hidden}
+body{overflow-x:hidden}
+.container{max-width:1200px;margin:auto}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h3{font-size:34px;color:var(--primary)}
+
+/* MENU */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.menu-card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+.menu-card img{width:100%;height:130px;object-fit:cover}
+.menu-card .content{padding:22px}
+.menu-card h4{color:var(--primary);margin-bottom:12px}
+.menu-card ul{list-style:none;font-size:14px;color:#555}
+.menu-card ul li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #ddd}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:14px}
+
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.review-card{background:#fff;border-radius:22px;padding:26px;box-shadow:0 10px 30px rgba(0,0,0,.08);text-align:center}
+.review-card p{font-size:15px;color:#555;margin-bottom:14px;line-height:1.7}
+.review-card h4{color:var(--primary);font-weight:600}
+
+/* POPUP */
+.popup{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:2000}
+.popup.active{display:flex}
+.popup form{background:#fff;padding:30px;border-radius:18px;max-width:500px;width:90%;display:grid;gap:14px}
+.popup input{padding:12px;border-radius:8px;border:1px solid #ddd}
+
+/* NEW FOOTER */
+footer{
+  background:#181818;
+  color:#f5f5f5;
+  padding:40px 20px 26px;
+  border-top:1px solid #111;
+  font-size:14px;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:0 auto 24px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:60px;
+}
+
+.footer-col h4{
+  font-size:16px;
+  color:var(--primary);
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.footer-col p{
+  color:#e0e0e0;
+  margin-bottom:6px;
+}
+
+.footer-col a{
+  color:#ffffff;
+  text-decoration:none;
+}
+
+.footer-col a:hover{
+  color:var(--secondary);
+}
+
+.footer-bottom{
+  text-align:center;
+  color:#b0b0b0;
+  font-size:13px;
+}
+
+/* Responsive footer */
+@media(max-width:768px){
+  .footer-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:24px;
+  }
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero h2{font-size:42px}
+}
+@media(max-width:768px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .gallery{grid-template-columns:1fr}
+  .hero h2{font-size:34px}
+}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:20px}
+.gallery img{width:100%;height:110px;object-fit:cover;border-radius:12px}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}.gallery img{height:90px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div style="display:flex;align-items:center;gap:14px">
+      <h3 style="color: orange; font-family: 'Sekuya', serif;">Vinayaka Restaurant</h3 style="color: orange; font-family: 'Sekuya', serif;">
+      <img src="Gemini_Generated_Image_shcv4shcv4shcv4s.png" alt="Vinayaka Logo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary);box-shadow:0 6px 14px rgba(0,0,0,.25)">
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <h2>Celebrate Moments at <span>Vinayaka</span></h2>
+      <p>Bright ambience, rooftop lounge, bar & pure veg delights. Perfect place to dine, celebrate and party.</p>
+      <div class="hero-cta">
+        <a onclick="document.getElementById('popup').classList.add('active')" class="btn primary">Book a Table</a>
+        <a onclick="document.getElementById('popup').classList.add('active')" class="btn secondary">Book for Birthday Party</a>
+        <a onclick="document.getElementById('popup').classList.add('active')" class="btn outline">Book Hall</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h4>Why Choose Us</h4>
+      <ul>
+        <li>🎉 Birthday & Party Bookings</li>
+        <li>🏛️ Spacious Party Hall</li>
+        <li>🍹 Bar with Cocktails & Drinks</li>
+        <li>🌿 100% Pure Veg Kitchen</li>
+        <li>🌆 Rooftop Lounge Seating</li>
+      </ul>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <a onclick="document.getElementById('contactPopup').classList.add('active')" class="btn primary">Contact Us</a>
+        <a href="https://www.zomato.com" target="_blank" class="btn secondary">Zomato</a>
+        <a href="https://www.swiggy.com" target="_blank" class="btn outline">Swiggy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container" 
+    <div>
+      <h3 style="font-family:'Lavishly Yours',cursive;font-size:40px;color:var(--primary);margin-bottom:16px">About Us</h3>
+      <p style="font-family:'Allura',cursive;font-size:22px;line-height:1.8;color:#444">
+        Vinayaka Restaurant (Rooftop & Lounge) is a refined dining destination known for its elegant ambience, stylish bar and soulful vegetarian cuisine. From relaxed family dinners to vibrant celebrations, our rooftop lounge and bar create moments worth remembering.
+      </p>
+    </div>
+    <div>
+      <div style="display:flex;gap:16px;margin-top:20px">
+
+  <img src="images (7).jpeg"
+       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
+
+  <img src="images (8).jpeg"
+       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
+
+  <img src="images (9).jpeg"
+       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
+
+</div>
+
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="section-title"><h3>Our Menu</h3></div>
+
+    <div class="menu-grid">
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5">
+<div class="content"><h4>Veg Starters</h4><ul>
+<li><span>French Fries</span><span>106/-</span></li>
+<li><span>Chilli Cheese Toast</span><span>115/-</span></li>
+<li><span>Spring Roll</span><span>145/-</span></li>
+</ul></div></div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1548365328-8b849e6c7c68">
+<div class="content"><h4>Pizza & Pasta</h4><ul>
+<li><span>Plain Cheese Pizza</span><span>190/-</span></li>
+<li><span>Super Veggie Pizza</span><span>265/-</span></li>
+<li><span>Pasta Twin Sauce</span><span>190/-</span></li>
+</ul></div></div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1604908177225-3f7a93cfc9a7">
+<div class="content"><h4>Indian Main Course</h4><ul>
+<li><span>Shahi Paneer</span><span>210/-</span></li>
+<li><span>Dal Makhani</span><span>192/-</span></li>
+<li><span>Butter Naan</span><span>58/-</span></li>
+</ul></div></div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1544148103-0773bf10d330">
+<div class="content"><h4>Bar & Cocktails</h4><ul>
+<li><span>Mojito</span><span>150/-</span></li>
+<li><span>Blue Lagoon</span><span>150/-</span></li>
+<li><span>Virgin Colada</span><span>150/-</span></li>
+<li><span>Mocktails & Drinks</span><span>—</span></li>
+</ul></div></div>
+
+</div>
+</div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-title"><h3>Gallery</h3></div>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" alt="Veg Food">
+      <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba" alt="Restaurant Ambience">
+      <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Veg Snacks">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Veg Cuisine">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Mocktails">
+      <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e" alt="Rooftop Seating">
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <div class="section-title"><h3>What Our Clients Say</h3></div>
+
+    <div class="swiper reviewSwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <p>“Amazing ambience and very polite staff. The food quality was excellent and the rooftop view made our evening special.”</p>
+            <h4>— Ankit Sharma</h4>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <p>“Perfect place for family dinners and birthday celebrations. Pure veg food with great taste. Highly recommended!”</p>
+            <h4>— Ritu Verma</h4>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="review-card">
+            <p>“Loved the cocktails and the overall vibe. One of the best restaurants in Mainpuri for parties.”</p>
+            <h4>— Rahul Singh</h4>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div style="text-align:center;margin-top:20px;font-size:16px;color:#444;font-family:'Poppins',sans-serif">
+  Rated with <strong>4.5</strong> ⭐⭐⭐⭐½ on Maps
+</div>
+    </div>
+    </section>
+
+
+<section id="book">
+  <div class="container">
+    <div class="section-title"><h3>Book a Table</h3></div>
+    <div style="text-align:center">
+      <a class="btn primary" onclick="document.getElementById('popup').classList.add('active')">Reserve Now</a>
+    </div>
+  </div>
+</section>
+
+<div class="popup" id="popup" onclick="this.classList.remove('active')">
+  <form onclick="event.stopPropagation()">
+    <h3 style="text-align:center;color:#f4b41a">Table Reservation</h3>
+    <input placeholder="Name" required>
+    <input placeholder="Phone" required>
+    <input type="date" required>
+    <input type="time" required>
+    <input type="number" placeholder="Guests" required>
+    <button class="btn primary">Confirm</button>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Vinayaka Restaurant</h4>
+      <p>Premium Rooftop &amp; Lounge Dining</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📞 +91 91935 53000</p>
+      <p>⏰ 9:00 AM – 11:00 PM</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Location</h4>
+      <p>Mainpuri, Uttar Pradesh</p>
+      <p><a href="#contact">View on Map</a></p>
+<iframe src="https://www.google.com/maps?q=Vinayaka%20Restaurant%20Mainpuri&output=embed"></iframe>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Vinayaka Restaurant. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<div class="popup" id="contactPopup" onclick="this.classList.remove('active')">
+  <form onclick="event.stopPropagation()">
+    <h3 style="color:#ff7a18;text-align:center">Contact Us</h3>
+    <p style="text-align:center;font-size:14px">Quickly reach us on WhatsApp or call for bookings</p>
+    <a href="https://wa.me/919193553000" target="_blank" class="btn primary" style="text-align:center">Chat on WhatsApp</a>
+    <a href="tel:+919193553000" class="btn outline" style="text-align:center">Call Now</a>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.reviewSwiper',{
+  loop:true,
+  pagination:{
+    el:'.swiper-pagination',
+    clickable:true
+  },
+  navigation:{
+    nextEl:'.swiper-button-next',
+    prevEl:'.swiper-button-prev'
+  },
+  autoplay:{
+    delay:4000,
+    disableOnInteraction:false
+  }
+});
+</script>
+</body>
+</html>
