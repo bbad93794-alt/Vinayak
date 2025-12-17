@@ -141,6 +141,31 @@ footer{
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:20px}
 .gallery img{width:100%;height:110px;object-fit:cover;border-radius:12px}
 @media(max-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}.gallery img{height:90px}}
+
+/* NEW ABOUT SECTION STYLES */
+.about-photos {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.about-photos img {
+  width: 32%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  flex: 1;
+  min-width: 280px;
+}
+
+@media (max-width: 768px) {
+  .about-photos img {
+    width: 100%;
+    min-width: unset;
+  }
+}
 </style>
 </head>
 <body>
@@ -148,7 +173,7 @@ footer{
 <header>
   <div class="nav">
     <div style="display:flex;align-items:center;gap:14px">
-      <h3 style="color: orange; font-family: 'Sekuya', serif;">Vinayaka Restaurant</h3 style="color: orange; font-family: 'Sekuya', serif;">
+      <h3 style="color: orange; font-family: 'Sekuya', serif;">Vinayaka Restaurant</h3>
       <img src="Gemini_Generated_Image_shcv4shcv4shcv4s.png" alt="Vinayaka Logo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--primary);box-shadow:0 6px 14px rgba(0,0,0,.25)">
     </div>
     <ul>
@@ -188,28 +213,18 @@ footer{
   </div>
 </section>
 
+<!-- UPDATED ABOUT SECTION -->
 <section id="about">
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
-    <div>
-      <h3 style="font-family:'Lavishly Yours',cursive;font-size:40px;color:var(--primary);margin-bottom:16px">About Us</h3>
-      <p style="font-family:'Allura',cursive;font-size:22px;line-height:1.8;color:#444">
-        Vinayaka Restaurant (Rooftop & Lounge) is a refined dining destination known for its elegant ambience, stylish bar and soulful vegetarian cuisine. From relaxed family dinners to vibrant celebrations, our rooftop lounge and bar create moments worth remembering.
-      </p>
-    </div>
-    <div>
-      <div style="display:flex;gap:16px;margin-top:20px">
-
-  <img src="images7.jpeg"
-       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
-
-  <img src="images8.jpeg"
-       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
-
-  <img src="images9.jpeg"
-       style="width:32%;height:220px;object-fit:cover;border-radius:18px">
-
-</div>
-
+  <div class="container">
+    <h3 style="font-family:'Lavishly Yours',cursive;font-size:40px;color:var(--primary);text-align:center;margin-bottom:24px">About Us</h3>
+    <p style="font-family:'Allura',cursive;font-size:22px;line-height:1.8;color:#444;text-align:center;max-width:800px;margin:0 auto 40px;">
+      Vinayaka Restaurant (Rooftop & Lounge) is a refined dining destination known for its elegant ambience, stylish bar and soulful vegetarian cuisine. From relaxed family dinners to vibrant celebrations, our rooftop lounge and bar create moments worth remembering.
+    </p>
+    
+    <div class="about-photos">
+      <img src="images7.jpeg" alt="Restaurant Interior">
+      <img src="images8.jpeg" alt="Rooftop Lounge">
+      <img src="images9.jpeg" alt="Delicious Food">
     </div>
   </div>
 </section>
@@ -269,7 +284,7 @@ footer{
     <div class="section-title"><h3>Gallery</h3></div>
     <div class="gallery">
       <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" alt="Veg Food">
-      <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba" alt="Restaurant Ambience">
+      <img src="images12.jpeg">
       <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de" alt="Veg Snacks">
       <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Veg Cuisine">
       <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Mocktails">
@@ -287,21 +302,21 @@ footer{
 
         <div class="swiper-slide">
           <div class="review-card">
-            <p>“Amazing ambience and very polite staff. The food quality was excellent and the rooftop view made our evening special.”</p>
+            <p>"Amazing ambience and very polite staff. The food quality was excellent and the rooftop view made our evening special."</p>
             <h4>— Ankit Sharma</h4>
           </div>
         </div>
 
         <div class="swiper-slide">
           <div class="review-card">
-            <p>“Perfect place for family dinners and birthday celebrations. Pure veg food with great taste. Highly recommended!”</p>
+            <p>"Perfect place for family dinners and birthday celebrations. Pure veg food with great taste. Highly recommended!"</p>
             <h4>— Ritu Verma</h4>
           </div>
         </div>
 
         <div class="swiper-slide">
           <div class="review-card">
-            <p>“Loved the cocktails and the overall vibe. One of the best restaurants in Mainpuri for parties.”</p>
+            <p>"Loved the cocktails and the overall vibe. One of the best restaurants in Mainpuri for parties."</p>
             <h4>— Rahul Singh</h4>
           </div>
         </div>
@@ -394,7 +409,3 @@ new Swiper('.reviewSwiper',{
 </script>
 </body>
 </html>
-
-
-
-
